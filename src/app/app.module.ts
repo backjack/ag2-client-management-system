@@ -1,18 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
+import {AgGridModule} from "ag-grid-angular/main";
 import { AppComponent } from './app.component';
+import { DatagridComponent } from './datagrid/datagrid.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DatagridComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AgGridModule.forRoot()
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [DatagridComponent]
 })
 export class AppModule { }
