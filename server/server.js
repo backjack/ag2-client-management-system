@@ -6,7 +6,9 @@ var client = require('../modals/client');
 var bodyParser = require('body-parser');
 var path = require('path');
 var app = express();
-var port = 3000;
+var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+
+var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 var defaultRoute = express.Router();
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -41,6 +43,6 @@ app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
-app.listen(port, function () {
+app.listen(server_port,server_ip_address ,function () {
     console.log("listening at " + port);
 });
