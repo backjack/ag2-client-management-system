@@ -1,0 +1,46 @@
+<div class="modal fade" tabindex="-1"
+ [ngClass]="{'in': visibleAnimate}" 
+ [ngStyle]="{'display': visible ? 'block' : 'none', 'opacity': visibleAnimate ? 1 : 0}">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <ng-content select=".app-modal-header"></ng-content>
+        <h4>{{title}}</h4>
+      </div>
+      <div class="modal-body">
+        <ng-content select=".app-modal-body"></ng-content>
+        <div>
+        <form class="form-horizontal">
+          <div class="form-group"  >
+              <label for="inputPayment" class="control-label col-xs-4">Payment</label>
+              <div class="col-xs-6">
+                  <input type="text" ng-if='payment'  class="form-control" id="inputPayment" [value] = 'payment.paidAmount' placeholder="Amount">
+                
+              </div>
+          </div>
+          <div class="form-group">
+              <label for="inputDetails" class="control-label col-xs-4">Details</label>
+              <div class="col-xs-6">
+                  <input type="text" class="form-control" id="inputDetails" [value] = 'payment.details' placeholder="Details">
+                 
+              </div>
+          </div>
+
+          <div class="form-group">
+            <label for="paymentDate" class="control-label col-xs-4">Payment Date</label>
+            <div class="col-xs-6">
+                <input type="date" class="form-control" id="paymentDate" [value] = 'payment.payDate'>
+            </div>
+         </div>
+         
+          <div class="form-group">
+              <div class="col-xs-offset-2 col-xs-10">
+                  <button type="submit" class="btn btn-primary" (click)= hide()>Cancel</button>
+              </div>
+          </div>
+      </form>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>

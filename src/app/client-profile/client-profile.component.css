@@ -1,0 +1,11 @@
+.profile {
+    margin-left:15px;
+}
+
+.toolbar {
+    margin-top:10px;
+   
+  }
+  .toolbar>button {
+    margin-left:5px;
+  }

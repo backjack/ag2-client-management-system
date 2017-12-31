@@ -1,0 +1,44 @@
+
+<div [ngBusy]="{busy:busy,wrapperClass:wrapperClass}" class="thumbnail">
+    <div class="row">
+    <div class ="col-sm-4">
+        <div class="caption">
+          <h4>{{title}}</h4>
+        </div>
+      </div>
+       <div class ="col-sm-offset-2 col-sm-6 toolbar">
+          <button class="btn btn-default pull-right" (click)="getInvoices()"> <span class="glyphicon glyphicon-refresh"></span></button>
+          <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon2" [(ngModel)]='filteredString'>
+              <span class="input-group-addon" id="basic-addon2"><span class="glyphicon glyphicon-search"></span></span>
+            </div>
+       </div>
+      </div>
+      <div  class= "row">
+        <div class ="col-sm-12">
+         <table class= 'table table-fixed'>
+           <thead>
+             <tr>
+               <th class= "col-xs-4">Invoice</th>
+               <th class= "col-xs-4">Date</th>
+               <th class= "col-xs-4">Amount(Rs)</th>
+             </tr>
+           </thead>
+           <tbody>
+              <tr *ngIf="filteredInvoices?.length == 0">
+                  <td class= "col-xs-12"> <span class="search_no_results">
+                                 No data found 
+                              </span>
+                      </td>
+               </tr>
+               <tr *ngFor ='let invoice of filteredInvoices'>
+                 
+                 <td class= "col-xs-4">{{invoice.id}}</td>
+                 <td class= "col-xs-4">{{invoice.creationDate | date: 'dd/MM/yyyy'}}</td>
+                 <td class= "col-xs-4">{{invoice.amount}}</td>
+               </tr>
+           </tbody>
+         </table>
+         </div>
+        </div>
+</div>

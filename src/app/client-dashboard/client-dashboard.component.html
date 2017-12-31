@@ -1,0 +1,43 @@
+<div class="row client-dashboard top-buffer" style="height:50px;">
+
+    <div class='col-sm-offset-6  col-sm-1'>
+        <button class="control-form btn btn-default pull-right">
+            <span class="glyphicon glyphicon-plus"></span> Add Client
+        </button>
+    </div>
+    <div class='col-sm-3'>
+
+        <ng-select class="select-mini"  [allowClear]="true" [items]="items" [disabled]="disabled" (data)="refreshValue($event)" (selected)="selected($event)"
+            (removed)="removed($event)" (typed)="typed($event)" placeholder="Select Client">
+        </ng-select>
+       
+  
+    </div>
+
+    <div class='col-sm-2'>
+        <ng-select class="select" [allowClear]="true" [items]="items" [disabled]="disabled" (data)="refreshValue($event)" (selected)="selected($event)"
+            (removed)="removed($event)" (typed)="typed($event)" placeholder="Select FY">
+        </ng-select>
+    </div>
+</div>
+
+<div class="row client-dashboard top-buffer">
+    <div class='col-sm-4'>
+        <app-client-payments></app-client-payments>
+    </div>
+
+    <div class='col-sm-4'>
+        <app-client-profile></app-client-profile>
+    </div>
+
+    <div class='col-sm-4'>
+        <app-client-invoice></app-client-invoice>
+    </div>
+
+</div>
+
+<div class="row client-dashboard  top-buffer">
+    <div class='col-sm-8'>
+        <app-datagrid></app-datagrid>
+    </div>
+</div>

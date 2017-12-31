@@ -1,0 +1,20 @@
+<div class="thumbnail">
+        <div class="row">
+                <div class ="col-sm-4">
+                    <div class="caption">
+                      <h4>Profile</h4>
+                    </div>
+                  </div>
+                   <div class ="col-sm-offset-2 col-sm-6 toolbar">
+                      <button class="btn btn-default pull-right"(click)= "clientPanel.show(clientInfo)"> <span class="glyphicon glyphicon-pencil"></span></button>
+                      <app-client-info-form #clientPanel></app-client-info-form>
+                    </div>
+        </div>
+
+    <div class ="profile">
+        <h3>{{clientInfo.name}}</h3>
+        <p> <b>ShortName </b>: {{clientInfo.shortName}}</p>
+        <p> <b>GST No </b>: {{clientInfo.gstNo}}</p>
+        <p> <b>Address </b>: {{clientInfo.address}}</p>
+    </div>
+</div>

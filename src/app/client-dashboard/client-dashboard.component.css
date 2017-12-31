@@ -1,0 +1,16 @@
+.client-dashboard {
+    height:50%;
+    background-color:#f5f5f5 ;
+}
+
+.top-buffer { 
+    margin-top:5px;
+    padding:10px }
+
+.selectbar{
+    display:inline
+}
+
+.widget {
+    height:200px;
+}
