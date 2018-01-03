@@ -44,5 +44,5 @@ app.get("/", function (req, res) {
 });
 
 app.listen(server_port,server_ip_address ,function () {
-    console.log("listening at " + port);
+    console.log("listening at " + server_port);
 });
